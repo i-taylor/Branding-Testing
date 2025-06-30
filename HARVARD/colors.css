@@ -1,0 +1,12 @@
+:root {
+    --color-maize: #A41034; /* Crimson */
+    --color-blue: #000000;  /* Black accent if desired */
+}
+
+.stripe-maize {
+    background-color: var(--color-maize);
+}
+
+.stripe-blue {
+    background-color: var(--color-blue);
+}

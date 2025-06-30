@@ -1,0 +1,12 @@
+:root {
+    --color-maize: #FFCB05;
+    --color-blue: #00274C;
+}
+
+.stripe-maize {
+    background-color: var(--color-maize);
+}
+
+.stripe-blue {
+    background-color: var(--color-blue);
+}
