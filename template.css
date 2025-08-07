@@ -1,1 +1,609 @@
+/* ===================================================================
+   BRAND VARIABLES (edit this block to swap branding for institutions)
+   =================================================================== */
+:root {
+    --primary-color: #00274C;        /* UM Blue */
+    --secondary-color: #FFCB05;      /* UM Maize */
+    --accent-color: #0B57D0;         /* Accent Blue */
+    --accent-light: #D7DEF7;         /* Light Accent */
+    --accent-yellow-light: #FCF5CE;  /* Light Yellow */
+    --accent-border: #305CDE;        /* Accent Border */
 
+    --logo-main: url('https://shared-files.online.umich.edu/mo-testing/UMICH/logo.png');
+    --logo-wide: url('https://shared-files.online.umich.edu/mo-testing/UMICH/wide-logo.png');
+    --icon-target: url('https://shared-files.online.umich.edu/mo-testing/UMICH/target.png');
+    --icon-notebook: url('https://shared-files.online.umich.edu/mo-testing/UMICH/notebook.png');
+    --icon-clock: url('https://shared-files.online.umich.edu/mo-testing/UMICH/clock.png');
+    --icon-lightbulb: url('https://shared-files.online.umich.edu/mo-testing/UMICH/lightbulb.png');
+    --icon-list: url('https://shared-files.online.umich.edu/mo-testing/UMICH/list.png');
+    
+    --font-primary: "Atkinson Hyperlegible", Arial, sans-serif;
+}
+
+/* ===================================================================
+   TEMPLATE COMPONENTS (Course Page Templates)
+   =================================================================== */
+
+/* Main page container */
+.template-course-page {
+    max-width: 800px;
+    font-family: var(--font-primary);
+    margin: 0 auto;
+}
+
+/* Header elements */
+.template-course-page__header-bar {
+    width: 100%;
+    background-color: var(--primary-color);
+    height: 30px;
+    border-top: 5px solid var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.template-course-page__logo {
+    background-image: var(--logo-main);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+    height: 80px;
+    margin: 20px auto;
+}
+
+/* Section headers */
+.template-course-section__header {
+    display: flex;
+    align-items: center;
+    margin: 30px 0 15px 0;
+}
+
+.template-course-section__header h2 {
+    color: var(--accent-color);
+    font-size: 1.76rem;
+    font-weight: bold;
+    margin: 0 0 0 10px;
+    font-family: var(--font-primary);
+}
+
+/* Content blocks */
+.template-course-section__content {
+    background-color: var(--accent-yellow-light);
+    border-left: 4px solid var(--secondary-color);
+    padding: 20px;
+    margin: 15px 0 30px 0;
+    line-height: 1.6;
+}
+
+/* Icon system */
+.template-course-icon {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
+}
+
+.template-course-icon--notebook { background-image: var(--icon-notebook); }
+.template-course-icon--target { background-image: var(--icon-target); }
+.template-course-icon--clock { background-image: var(--icon-clock); }
+.template-course-icon--lightbulb { background-image: var(--icon-lightbulb); }
+.template-course-icon--list { background-image: var(--icon-list); }
+
+/* Footer */
+.template-course-footer {
+    margin-top: 40px;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 2px solid var(--secondary-color);
+}
+
+.template-course-footer__logo {
+    background-image: var(--logo-wide);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.template-course-footer__text {
+    color: var(--primary-color);
+    font-size: 1.1em;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* ===================================================================
+   GENERAL PAGE COMPONENTS
+   =================================================================== */
+
+/* Base page styling */
+.pageBody {
+    font-family: var(--font-primary);
+}
+
+.pageBody h2 {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.76rem;
+    font-family: var(--font-primary);
+}
+
+.pageBody h3 {
+    color: #707070;
+    font-weight: bold;
+    font-size: 1.4rem;
+    font-family: var(--font-primary);
+}
+
+.pageBody h4 {
+    color: #414042;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: var(--font-primary);
+}
+
+.pageBody h5 {
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-family: var(--font-primary);
+}
+
+.pageBody hr {
+    border-bottom: 2px solid var(--secondary-color);
+    margin: 20px 0;
+}
+
+/* ===================================================================
+   LANDING PAGE COMPONENTS
+   =================================================================== */
+
+/* Landing page header */
+.landingPageHeader {
+    background-color: var(--primary-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 6px solid var(--secondary-color);
+}
+
+.landingPageHeaderTitle {
+    width: 70%;
+}
+
+.landingPageHeaderTitle h2 {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+    font-family: var(--font-primary);
+}
+
+.landingPageHeaderTitle p {
+    font-size: medium;
+    color: white;
+    margin: 5px;
+    font-family: var(--font-primary);
+}
+
+.landingPageHeader img {
+    max-width: 20%;
+    height: auto;
+    border: 1px solid white;
+}
+
+/* Navigation buttons */
+.landingPageNavCon {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0 20px 0;
+}
+
+.landingPageNavButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: var(--accent-color);
+    border-top: 3px solid #58B5F7;
+    color: white;
+    flex: 1 1 20%;
+    transition: font-size 0.4s ease;
+    cursor: pointer;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.landingPageNavButtons:hover {
+    font-size: 20px;
+    color: white;
+}
+
+/* Continue button */
+.continueButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: var(--accent-color);
+    border-top: 3px solid #58B5F7;
+    color: white;
+    transition: font-size 0.4s ease;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 20px auto;
+}
+
+.continueButton:hover {
+    font-size: 20px;
+    color: white;
+}
+
+/* ===================================================================
+   CONTENT COMPONENTS
+   =================================================================== */
+
+/* Quote boxes */
+.quoteBox {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    margin: 2em 0;
+    font-family: var(--font-primary);
+}
+
+.quoteBox .imgWrapper {
+    width: 150px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.quoteBox .imgWrapper::before {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.quoteBox .imgWrapper img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.quoteBox .quoteContent {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.quoteBox .quoteContent blockquote {
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    border: none;
+}
+
+.quoteBox .quoteContent cite {
+    font-style: italic;
+    font-size: 0.9em;
+    display: block;
+}
+
+.quoteBox.quoteStyle1 {
+    background-color: var(--accent-light);
+}
+
+.quoteBox.quoteStyle2 {
+    background-color: #FDEDAF;
+}
+
+/* Call out boxes */
+.fullCallOutBox {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 20px;
+    border-top: 5px solid #40ABD7;
+    margin-bottom: 20px;
+}
+
+.fullCallOutBox h2 {
+    color: white;
+    margin-top: 0;
+}
+
+.sideBySideCallOutCon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+
+.sideBySideCallOut {
+    flex: 1 1 300px;
+    background-color: var(--accent-light);
+    border-top: 5px solid var(--accent-border);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Point to note boxes */
+.pointToNote {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 20px;
+    float: right;
+    width: 30%;
+    border-top: 5px solid #40ABD7;
+    margin: 0 0 0 20px;
+}
+
+.pointToNote h2 {
+    color: white;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.pointToNoteLeft {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 20px;
+    float: left;
+    width: 30%;
+    border-top: 5px solid #40ABD7;
+    margin: 0 20px 0 0;
+}
+
+.pointToNoteLeft h2 {
+    color: white;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+/* ===================================================================
+   TABLES
+   =================================================================== */
+
+.umich-table-row-stripe,
+.umich-table-col-stripe {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-primary);
+    text-align: center;
+}
+
+.umich-table-row-stripe th,
+.umich-table-col-stripe th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5em;
+}
+
+.umich-table-row-stripe td,
+.umich-table-col-stripe td {
+    padding: 0.5em;
+    border: 2px solid white;
+    color: black;
+}
+
+/* Row striping */
+.umich-table-row-stripe tbody tr:nth-child(odd) {
+    background-color: var(--accent-light);
+}
+
+.umich-table-row-stripe tbody tr:nth-child(even) {
+    background-color: var(--accent-yellow-light);
+}
+
+/* Column striping */
+.umich-table-col-stripe tbody td:nth-child(odd) {
+    background-color: var(--accent-light);
+}
+
+.umich-table-col-stripe tbody td:nth-child(even) {
+    background-color: var(--accent-yellow-light);
+}
+
+/* ===================================================================
+   ACCORDIONS
+   =================================================================== */
+
+.umich-accordion-a,
+.umich-accordion-b {
+    margin: 2em 0;
+    font-family: var(--font-primary);
+}
+
+.umich-accordion-a > div:first-child,
+.umich-accordion-b > div:first-child {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1em;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.umich-accordion-a details,
+.umich-accordion-b details {
+    margin-bottom: 2px;
+}
+
+.umich-accordion-a summary,
+.umich-accordion-b summary {
+    cursor: pointer;
+    padding: 1em;
+    font-weight: bold;
+}
+
+.umich-accordion-a details > div,
+.umich-accordion-b details > div {
+    padding: 0.2em 1em;
+    margin: 0;
+}
+
+/* Accordion A - alternating colors */
+.umich-accordion-a details:nth-of-type(odd) {
+    background-color: var(--accent-light);
+}
+
+.umich-accordion-a details:nth-of-type(even) {
+    background-color: var(--accent-yellow-light);
+}
+
+/* Accordion B */
+.umich-accordion-b details {
+    background-color: var(--accent-light);
+    border-top: 4px solid var(--accent-border);
+}
+
+/* ===================================================================
+   MEDIA COMPONENTS
+   =================================================================== */
+
+.videoCon {
+    border: 2px solid var(--secondary-color);
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.videoCon iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+.photoGallery {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    margin-bottom: 20px;
+}
+
+.photoGallery img {
+    width: 49%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ===================================================================
+   UTILITY COMPONENTS
+   =================================================================== */
+
+.gradientBreak {
+    padding: 30px 0;
+}
+
+.breakBlue {
+    width: 66%;
+    height: 4px;
+    background: linear-gradient(to right, rgba(0, 39, 76, 0), var(--primary-color), rgba(0, 39, 76, 0));
+    margin: 0 auto;
+}
+
+.breakYellow {
+    width: 66%;
+    height: 4px;
+    background: linear-gradient(to right, rgba(255, 203, 5, 0), var(--secondary-color), rgba(255, 203, 5, 0));
+    margin: 0 auto;
+}
+
+.fullImage {
+    width: 100%;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ===================================================================
+   RESPONSIVE DESIGN
+   =================================================================== */
+
+@media (max-width: 800px) {
+    .landingPageHeader h2 {
+        font-size: 1em;
+    }
+    
+    .landingPageHeader p {
+        font-size: 0.8em;
+    }
+    
+    .landingPageNavButtons {
+        font-size: 14px;
+    }
+    
+    .landingPageNavButtons:hover {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .template-course-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .template-course-section__header h2 {
+        font-size: 1.6em;
+    }
+    
+    .pointToNote,
+    .pointToNoteLeft {
+        float: none;
+        width: auto;
+        margin: 20px 0 0 0;
+    }
+    
+    .quoteBox {
+        flex-direction: column;
+    }
+    
+    .quoteBox .imgWrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .sideBySideCallOutCon {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .sideBySideCallOut {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 500px) {
+    .landingPageNavButtons {
+        flex: 1 1 80%;
+        font-size: 18px;
+    }
+    
+    .continueButton {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+    
+    .continueButton:hover {
+        font-size: 20px;
+    }
+}
