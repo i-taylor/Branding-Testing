@@ -69,26 +69,63 @@ At the very top of your `style.css` file, find this section:
   - **Requirements**: Must be light enough for dark text
   - **Example**: `#FFF8E1` (Very light yellow/cream)
 
-### 3. Update Logo and Icon URLs
+### 3. Prepare Your Institution's Asset Folder
 
-Replace all image URLs with your institution's assets:
+Create a folder with your institution's brand name containing all required assets:
 
-```css
---logo-main: url('https://your-cdn.edu/path-to/main-logo.png');
---logo-wide: url('https://your-cdn.edu/path-to/wide-logo.png');
---icon-target: url('https://your-cdn.edu/path-to/target-icon.png');
---icon-notebook: url('https://your-cdn.edu/path-to/notebook-icon.png');
---icon-clock: url('https://your-cdn.edu/path-to/clock-icon.png');
---icon-lightbulb: url('https://your-cdn.edu/path-to/lightbulb-icon.png');
---icon-list: url('https://your-cdn.edu/path-to/list-icon.png');
+#### Folder Structure
+```
+YOUR-INSTITUTION-NAME/
+├── logo.png          (main/square logo)
+├── wide-logo.png     (horizontal logo for footers)
+├── target.png        (objectives icon)
+├── notebook.png      (overview icon)
+├── clock.png         (time/schedule icon)
+├── lightbulb.png     (ideas/tips icon)
+└── list.png          (resources/checklist icon)
 ```
 
-#### Logo Requirements:
-- **Main Logo**: Square/compact format, ~200px width recommended
-- **Wide Logo**: Horizontal format for footers, ~400px width recommended
-- **Icons**: 40x40px minimum, SVG or PNG format recommended
+#### Asset Requirements:
+- **logo.png**: Square/compact format, 200x200px recommended
+- **wide-logo.png**: Horizontal format, ~400x100px recommended  
+- **Icons**: All icons should be 40x40px minimum, consistent style
+- **Format**: PNG with transparent backgrounds preferred, SVG acceptable
+- **Naming**: Must use exact filenames shown above (case-sensitive)
 
-### 4. Update Font (Optional)
+#### Folder Naming Convention:
+- Use your institution's common abbreviation in ALL CAPS
+- Examples: `UMICH`, `PSU`, `OSU`, `MSU`, `UCLA`, etc.
+- No spaces, special characters, or lowercase letters
+
+### 4. Update the Brand Folder Path
+
+Once your folder is uploaded to the MO system, simply update the brand name in the CSS:
+
+**Before (University of Michigan):**
+```css
+--logo-main: url('https://shared-files.online.umich.edu/mo-testing/UMICH/logo.png');
+--logo-wide: url('https://shared-files.online.umich.edu/mo-testing/UMICH/wide-logo.png');
+--icon-target: url('https://shared-files.online.umich.edu/mo-testing/UMICH/target.png');
+--icon-notebook: url('https://shared-files.online.umich.edu/mo-testing/UMICH/notebook.png');
+--icon-clock: url('https://shared-files.online.umich.edu/mo-testing/UMICH/clock.png');
+--icon-lightbulb: url('https://shared-files.online.umich.edu/mo-testing/UMICH/lightbulb.png');
+--icon-list: url('https://shared-files.online.umich.edu/mo-testing/UMICH/list.png');
+```
+
+**After (Penn State example):**
+```css
+--logo-main: url('https://shared-files.online.umich.edu/mo-testing/PSU/logo.png');
+--logo-wide: url('https://shared-files.online.umich.edu/mo-testing/PSU/wide-logo.png');
+--icon-target: url('https://shared-files.online.umich.edu/mo-testing/PSU/target.png');
+--icon-notebook: url('https://shared-files.online.umich.edu/mo-testing/PSU/notebook.png');
+--icon-clock: url('https://shared-files.online.umich.edu/mo-testing/PSU/clock.png');
+--icon-lightbulb: url('https://shared-files.online.umich.edu/mo-testing/PSU/lightbulb.png');
+--icon-list: url('https://shared-files.online.umich.edu/mo-testing/PSU/list.png');
+```
+
+**💡 Pro Tip**: You can use find-and-replace to change all instances of `/UMICH/` to `/YOUR-INSTITUTION/` in one step!
+
+### 5. Update Font (Optional)
 
 If your institution has a specific font requirement:
 
